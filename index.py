@@ -19,7 +19,7 @@ while True:
             nome = str(input("Digite o nome do funcionario:")).upper()
             idade = int(input("Digite a idade do funcionario:"))
             cargo = str(input("Digite o cargo do funcionario:")).upper()
-            salario = float(input("Digite o salário do funcionario(não use vírgula):"))
+            salario = int(input("Digite o salário do funcionario(não use vírgula):"))
             funcionario.append([nome, idade, cargo, salario])
             continuar = input("Deseja adicionar outro funcionario(S/N): ").upper()
             if continuar == "N":
@@ -53,7 +53,7 @@ while True:
         if not funcionario:
             print("Nenhum funcionario foi cadastrado!")
         else:
-            total_salario = sum(f[1] for f in funcionario)
+            total_salario = sum(f[3] for f in funcionario)
             media_salarial = total_salario / len(funcionario)
             print(f"Média salarial dos funcionarios: {media_salarial:.2f}")
 
