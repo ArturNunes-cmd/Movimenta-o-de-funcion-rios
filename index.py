@@ -1,3 +1,5 @@
+from prettytable import PrettyTable
+table = PrettyTable()
 funcionario = []
 
 while True:
@@ -14,9 +16,11 @@ while True:
         print("\nCadastrar funcionario")
         continuar = "S"
         while continuar == "S": 
-            nome = input("Digite o nome do funcionario:").upper()
+            nome = str(input("Digite o nome do funcionario:")).upper()
+            idade = int(input("Digite a idade do funcionario:"))
+            cargo = str(input("Digite o cargo do funcionario:")).upper()
             salario = float(input("Digite o salário do funcionario(não use vírgula):"))
-            funcionario.append([nome, salario])
+            funcionario.append([nome, idade, cargo, salario])
             continuar = input("Deseja adicionar outro funcionario(S/N): ").upper()
             if continuar == "N":
                 break
@@ -26,8 +30,11 @@ while True:
         if not funcionario:
             print("Nenhum funcionario foi cadastrado!")
         else:
+            table.clear()
+            table.field_names = ["Nome", "Idade", "Cargo", "Salário"]
             for f in funcionario:
-                print(f"Nome: {f[0]}, Salário: {f[1]}")
+                table.add_row(f)
+            print(table)
 
     elif opcao == 3:
         print("\nBuscar por nome:")
@@ -35,7 +42,7 @@ while True:
         encontrado = False
         for f in funcionario:
             if f[0] == nome_busca:
-                print(f"Nome: {f[0]}, Salário: {f[1]}")
+                print(f"Nome: {f[0]}, Idade: {f[1]}, Cargo: {f[2]}, Salário: {f[3]}")
                 encontrado = True
                 break
         if not encontrado:
