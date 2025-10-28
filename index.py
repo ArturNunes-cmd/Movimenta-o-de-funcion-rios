@@ -38,7 +38,7 @@ def buscar_funcionario():
     if not encontrado:
         print("Funcionario não encontrado!")
 
-def _media_salarial():
+def media_salarial():
     print("\nCalcular média salarial:")
     if not funcionario:
         print("Nenhum funcionario foi cadastrado!")
@@ -68,7 +68,7 @@ while True:
     elif opcao == 3:
         buscar_funcionario()
     elif opcao == 4:
-        _media_salarial()
+        media_salarial()
     elif opcao == 5:
         sair()
     else:
