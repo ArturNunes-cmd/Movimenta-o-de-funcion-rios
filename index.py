@@ -43,6 +43,12 @@ while True:
 
     elif opcao == 4:
         print("\nCalcular média salarial:")
+        if not funcionario:
+            print("Nenhum funcionario foi cadastrado!")
+        else:
+            total_salario = sum(f[1] for f in funcionario)
+            media_salarial = total_salario / len(funcionario)
+            print(f"Média salarial dos funcionarios: {media_salarial:.2f}")
 
     elif opcao == 5:
         print("\nSair")
