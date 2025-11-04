@@ -28,7 +28,4 @@ Um sistema simples em **Python** para cadastrar, visualizar, buscar e calcular a
 - **Linguagem:** Python 🐍  
 - **Biblioteca:** [PrettyTable](https://pypi.org/project/PrettyTable/)
 
-Para instalar:
-```bash
-pip install prettytable
 
